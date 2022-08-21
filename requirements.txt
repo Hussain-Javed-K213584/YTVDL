@@ -2,3 +2,5 @@ flask
 Flask-Mail
 # https://pytube.io/en/latest/user/install.html (package for download videos)
 pytube
+# To convert video to audio
+moviepy
