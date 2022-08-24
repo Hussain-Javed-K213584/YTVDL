@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    YTVDL
+{% endblock %}
+
+{% block body %}
+
+<header class="header-container">
+    <h2 class="header-content">YTVDL</h2>
+</header>
+<main class="flex">
+    <div class="result">
+        <img class="img-fluid" src="{{ image }}" alt="could_not_retrieve_thumbnail">
+        {{ title }}
+        {{ author }}
+    </div>
+</main>
+
+{% endblock%}
