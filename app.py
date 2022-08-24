@@ -1,7 +1,4 @@
-from asyncore import file_wrapper
-from crypt import methods
 from flask import Flask, render_template, session, request, redirect
-from flask_mail import Mail
 from pytube import YouTube
 import moviepy.editor as mp
 
@@ -13,13 +10,17 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # The following app with test to download youtube videos
 
-# Dont rout to '/' for post request
-@app.route("/video-download")
+# URL: https://www.youtube.com/watch?v=Mz97sjRMSzg&ab_channel=Radixerus
+
+# Dont route to '/' for post request
+@app.route("/")
 def index():
     return render_template("index.html")
 
-def get_video(url):
-    video_obj = YouTube(url)
-    video_obj.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download('./Downloads')
+@app.route("/result", methods=['GET', 'POST'])
+def result():
+    link = request.form.get("link")
+    yt = YouTube(link)
+    return render_template("result.html", title=yt.title, author=yt.author, image=yt.thumbnail_url)
 
 
