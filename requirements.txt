@@ -5,3 +5,5 @@ pytube
 # To convert video to audio
 moviepy
 cs50 # For SQL module
+gunicorn
+psycopg2
