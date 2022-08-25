@@ -4,3 +4,4 @@ Flask-Mail
 pytube
 # To convert video to audio
 moviepy
+cs50 # For SQL module
