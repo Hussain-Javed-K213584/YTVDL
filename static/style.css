@@ -38,6 +38,7 @@ body.document{
   justify-content: center;
   align-items: center;
   margin-top: 10%;
+  margin-left: 20px;
 }
 
 .commend{
@@ -63,7 +64,7 @@ input[type=text]{
   font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 400px;
+  width: 300px;
   max-width: 500px;
   background-color: snow;
   border: 2px solid grey;
