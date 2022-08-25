@@ -5,21 +5,24 @@
 {% endblock %}
 
 {% block body %}
-
-<header class="header-container">
-    <h2 class="header-content">YTVDL</h2>
-</header>
 <main class="flex">
     <div class="content">
-        <img class="img-fluid thumbnail" src="{{ image }}" alt="ImageNotFound">
-        <form action="/download" method="post">
-            <select name="quality">
+        <p class="title">
+            Title: {{ title }}
+        </p>
+        <img class="thumbnail" src="{{ image }}" alt="ImageNotFound">
+        <form class="quality-submit" action="/download" method="post">
+            <label for="quality">Quality:</label>
+            <select class="form-select" name="quality">
                 <option value="720p">720p</option>
                 <option value="360p">360p</option>
                 <option value="mp3">mp3</option>
             </select>
-            <button class="btn btn-primary" type="submit" name="download-button" value="{{ link }}">Download</button>
+            <button class="btn btn-primary btn-download" type="submit" name="download-button" value="{{ link }}">Download</button>
         </form>
+        <p class="author">
+            Author: {{ author }}
+        </p>
     </div>
 </main>
 

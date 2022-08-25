@@ -5,9 +5,6 @@
 {% endblock %}
 
  {% block body %}
- <header class="header-container">
-    <h2 class="header-content"><a class="main-page" href="{{ url_for('index') }}">YTVDL</a></h2>
-</header>
 <main class="flex">
     <form action="/result" method="post">
         <input class="form" type="text" autofocus autocomplete="off" placeholder="URL of YouTube video or playlist" name="link">
@@ -15,6 +12,6 @@
     </form>
 </main>
 <footer class="end">
-    This was CS50.
+    Created by Muhammad Hussain Javed. This was <a class="commend" href="https://cs50.harvard.edu/x/2022/">CS50</a>.
 </footer>
  {% endblock%}
