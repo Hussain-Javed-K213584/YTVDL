@@ -14,10 +14,11 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Connect to database
 # For heroku
-uri = os.getenv("postgres://oebdikmelantek:b2ecd5f7ca6e6059ee385d328012474e3746c64e59dcf5d68ae1f438caeb81a9@ec2-54-165-184-219.compute-1.amazonaws.com:5432/ddgtkvolna77jb")
-if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://")
-db = SQL(uri)
+# uri = os.getenv("history.db")
+# print(uri)
+# if uri.startswith("postgres://"):
+#     uri = uri.replace("postgres://", "postgresql://")
+# db = SQL(uri)
 
 # The following app with test to download youtube videos
 
@@ -48,7 +49,7 @@ def get_video():
         yt = YouTube(link)
         print(link)
         if quality[-1] == "p":
-            update_db(yt.title, yt.author, link, "mp4")
+            # update_db(yt.title, yt.author, link, "mp4")
             yt = yt.streams.filter(progressive=True, file_extension='mp4')
             yt = yt.get_by_resolution(quality)
             buffer = BytesIO() # Use buffer to not to download file on server
@@ -56,7 +57,7 @@ def get_video():
             buffer.seek(0)
             return send_file(buffer, as_attachment=True, download_name=yt.title + ".mp4", mimetype="video/mp4")
         elif quality == "mp3":
-            update_db(yt.title, yt.author, link, "mp3")
+            # update_db(yt.title, yt.author, link, "mp3")
             yt = yt.streams.filter(only_audio=True, file_extension='mp4')
             yt = yt.get_highest_resolution()
             buffer = BytesIO() # Use buffer to not to download file on server
@@ -66,6 +67,6 @@ def get_video():
     return redirect("/")
 
 
-def update_db(title, author, url, file_type):
-    timestamp = datetime.now()
-    db.execute("INSERT INTO history(url, title, author, file_type, timestamp) VALUES (?, ?, ?, ?, ?)", url, title, author, file_type, timestamp)
+# def update_db(title, author, url, file_type):
+#     timestamp = datetime.now()
+#     db.execute("INSERT INTO history(url, title, author, file_type, timestamp) VALUES (?, ?, ?, ?, ?)", url, title, author, file_type, timestamp)
