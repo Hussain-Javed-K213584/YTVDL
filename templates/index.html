@@ -6,7 +6,7 @@
 
  {% block body %}
  <header class="header-container">
-    <h2 class="header-content">YTVDL</h2>
+    <h2 class="header-content"><a class="main-page" href="{{ url_for('index') }}">YTVDL</a></h2>
 </header>
 <main class="flex">
     <form action="/result" method="post">
@@ -14,4 +14,7 @@
         <input class="btn btn-primary" type="submit" value="Download">
     </form>
 </main>
+<footer class="end">
+    This was CS50.
+</footer>
  {% endblock%}
