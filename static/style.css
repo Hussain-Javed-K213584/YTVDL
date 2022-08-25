@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: titleAndAuthor;
+  src: url(/OpenSans/OpenSans-regular.ttf);
+}
+
 body.document{
   background-color: snow;
 }
@@ -30,15 +35,20 @@ body.document{
 
 .flex{
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 10%;
 }
 
+.commend{
+  text-decoration: none;
+}
+
 .end{
   text-align: center;
+  margin-top: 18em;
   font-size: 24px;
+  font-style: italic;
 }
 
 input[type=text]{
@@ -53,7 +63,7 @@ input[type=text]{
   font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100%;
+  width: 400px;
   max-width: 500px;
   background-color: snow;
   border: 2px solid grey;
@@ -65,22 +75,63 @@ input[type=text]{
   box-sizing: border-box; 
 }
 
-
-
-.img-fluid{
-  margin: 50px 0px 0px 0px;
-  width: 300px;
-  height: 300px;
-}
-
-.content{
-  box-shadow: 10px 10px lightblue;
-  background-color: snow;
-  outline: 5px solid black;
+.apology{
   width: 600px;
   height: 500px;
 }
-.table{
-  outline: 5px solid red;
-  width: 500px;
+
+.thumbnail{
+  margin: 20px 0px 0px 30px;
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+  height: 200px;
 }
+
+.content{
+  display: inline;
+  box-shadow: 7px 7px 10px 10px lightblue;
+  background-color: snow;
+  width: 600px;
+  height: 500px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.btn{
+  margin-left: 10px;
+}
+
+.btn-download{
+  margin-top: -66px;
+  margin-left: 120px;
+}
+
+.dropdown{
+  width: 100px;
+}
+
+.quality-submit{
+  width: 100px;
+  display: inline-block;
+  margin: 130px 0px 0px 30px;
+  position: relative;
+}
+
+.title{
+  margin: 50px 0px 0px 80px;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+.author{
+  margin: 30px 0px 0px 90px;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
