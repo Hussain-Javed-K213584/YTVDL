@@ -16,15 +16,29 @@ body.document{
   height: 6.7vh;
 }
 
+.main-page{
+  text-decoration: none;
+  color: snow;
+}
+
+.main-page:hover{
+  color: snow;
+}
 .header-content{
   color: white;
 }
 
 .flex{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 10%;
+}
+
+.end{
+  text-align: center;
+  font-size: 24px;
 }
 
 input[type=text]{
@@ -51,15 +65,22 @@ input[type=text]{
   box-sizing: border-box; 
 }
 
-button.btn{
-  margin-top: 10px;
-}
+
 
 .img-fluid{
+  margin: 50px 0px 0px 0px;
   width: 300px;
   height: 300px;
 }
 
-.result{
-  display: inline;
+.content{
+  box-shadow: 10px 10px lightblue;
+  background-color: snow;
+  outline: 5px solid black;
+  width: 600px;
+  height: 500px;
+}
+.table{
+  outline: 5px solid red;
+  width: 500px;
 }
