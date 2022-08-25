@@ -3,6 +3,8 @@ from pytube import YouTube
 from io import BytesIO
 from cs50 import SQL
 from datetime import datetime
+import os
+
 
 # Set flask app
 app = Flask("__name__")
@@ -11,8 +13,11 @@ app = Flask("__name__")
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Connect to database
-
-db = SQL("sqlite:///Database/history.db")
+# For heroku
+uri = os.getenv("postgres://oebdikmelantek:b2ecd5f7ca6e6059ee385d328012474e3746c64e59dcf5d68ae1f438caeb81a9@ec2-54-165-184-219.compute-1.amazonaws.com:5432/ddgtkvolna77jb")
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://")
+db = SQL(uri)
 
 # The following app with test to download youtube videos
 
