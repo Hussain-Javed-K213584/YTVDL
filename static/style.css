@@ -95,9 +95,15 @@ input[type=text]{
   background-color: snow;
   width: 600px;
   height: 500px;
+  overflow: auto;
 }
 
 .container{
+  box-shadow: 7px 7px 10px 10px lightblue;
+  background-color: snow;
+  width: 600px;
+  height: 700px;
+  overflow: auto;
   display: flex;
   justify-content: center;
   align-items: center;
