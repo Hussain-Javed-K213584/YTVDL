@@ -49,7 +49,7 @@ def get_video():
         quality = request.form.get("quality")
         yt = YouTube(link)
         if quality[-1] == "p":
-            update_db(yt.title, yt.author, link, "mp4")
+            # update_db(yt.title, yt.author, link, "mp4")
             yt = yt.streams.filter(progressive=True, file_extension='mp4')
             yt = yt.get_by_resolution(quality)
             buffer = BytesIO() # Use buffer to not to download file on server
@@ -57,12 +57,9 @@ def get_video():
             buffer.seek(0)
             return send_file(buffer, as_attachment=True, download_name=yt.title + ".mp4", mimetype="video/mp4")
         elif quality == "mp3":
-            update_db(yt.title, yt.author, link, "mp3")
+            # update_db(yt.title, yt.author, link, "mp3")
             yt = yt.streams.get_audio_only()
             print(yt)
-            # update_db(yt.title, yt.author, link, "mp3")
-            yt = yt.streams.filter(progressive=True, file_extension='mp4')
-            yt = yt.get_highest_resolution()
             buffer = BytesIO() # Use buffer to not to download file on server
             yt.stream_to_buffer(buffer)
             buffer.seek(0)
