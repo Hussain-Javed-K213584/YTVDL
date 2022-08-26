@@ -62,6 +62,9 @@ def get_video():
             update_db(yt.title, yt.author, link, "mp3")
             yt = yt.streams.get_audio_only()
             print(yt)
+            # update_db(yt.title, yt.author, link, "mp3")
+            yt = yt.streams.filter(progressive=True, file_extension='mp4')
+            yt = yt.get_highest_resolution()
             buffer = BytesIO() # Use buffer to not to download file on server
             yt.stream_to_buffer(buffer)
             buffer.seek(0)
