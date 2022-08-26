@@ -1,4 +1,4 @@
-#YouTube Video Downloader
+# YouTube Video Downloader
 #### Video Demo: [YTVDL - A CS50x Project](https://www.youtube.com/watch?v=TWzjLfXKdio&ab_channel=HussainJaved)
 #### Description: 
 This is my final project for CS50x. The name of the project is YTVDL or YouTube video downloader.
