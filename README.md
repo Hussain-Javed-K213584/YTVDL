@@ -1,4 +1,4 @@
-# YouTube Video Downloader
+#YouTube Video Downloader
 #### Video Demo: [YTVDL - A CS50x Project](https://www.youtube.com/watch?v=TWzjLfXKdio&ab_channel=HussainJaved)
 #### Description: 
 This is my final project for CS50x. The name of the project is YTVDL or YouTube video downloader.
@@ -10,7 +10,7 @@ downloader myself? So I went on to Google, searched for a way to use python and 
 [Pytube](https://pytube.io/en/latest/), a light weight open source module of python which had the ability to use a YouTube video URL
 and download that video into multiple qualities.
 
-## The app itself
+##The app itself
 The application consist of the main app.py where I am importing multiple familiar libraries but there is one called [io](https://docs.python.org/3/library/io.html),
 more on that later. The structure of my directory is something like this:
 ```bash
@@ -49,12 +49,12 @@ more on that later. The structure of my directory is something like this:
 └── test.txt
 ```
 Yes, a lot of files.
-### Templates
+###Templates
 Let's start with the templates directory. I created a layout.html in which I added a header and some css to it using my personal stylesheet. I then used
 ```jinja``` syntax to template my ```layout.html``` file into multiple other files. I then created an index.html file which would route to "/", which is the 
 root of my web application. I created three other HTML files called ```result.html```, ```video.html```, ```apology.html```. Every HTML file used the ```layout.html``` template.
 
-### Index.html
+###Index.html
 Let's start with index.html. The file consist of an input text field which requires a YouTube URL. Beside the text field is a button which was created using bootstrap.
 I then borrowed the code from [Codepen](https://codepen.io/Tipue/pen/NzpeoN) to make the input field more repsonsive when viewing the web app from a smartphone.
 ### Result.html
@@ -69,7 +69,7 @@ The page also contains a download button and a quality dropdown menu having thre
 - mp3
 Where mp3 is used to download only the audio of the video, this option was specifically for music videos.
 
-### Apology.html
+###Apology.html
 This page generates a grumpy cat image generated using the [Memegen](https://github.com/jacebrowning/memegen) API found on GitHub. This page is rendered whenever the
 user fails to provide with a valid YouTube URL or does not write a URL at all.
 
@@ -80,5 +80,5 @@ video which we want to download we are then routed to the ```@app.route("/downlo
 out the streams we want where we make sure that the stream is progressive so that we get both the audio and video in a single .mp4 file and we specify the quality
 of the video by using the ```get_by_resolution(quality)``` method. Once all this is complete we use the python [io](https://docs.python.org/3/library/io.html) library 
 to make sure that we are not downloading the file on our server but on the user's desktop or smartphone. We stream the video to the buffer and use the ```send_file()``` function to send the user the file he wished to download.
-### Update_db()
+###Update_db()
 The update_db uses [cs50](https://pypi.org/project/cs50/) library to execute SQL commands, more specifically, sqlite3 commands to add data in out history.db database.
