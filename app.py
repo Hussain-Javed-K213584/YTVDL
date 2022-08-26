@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, request, redirect, send_file
-from pytube import YouTube
+from pytube import YouTube, Playlist
 from io import BytesIO
 from cs50 import SQL
 from datetime import datetime
@@ -13,7 +13,7 @@ app = Flask("__name__")
 # Makes sure templates auto reload
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 # SQlite3 DB 
-os.environ['DATABASE_URL'] = "postgres://oebdikmelantek:b2ecd5f7ca6e6059ee385d328012474e3746c64e59dcf5d68ae1f438caeb81a9@ec2-54-165-184-219.compute-1.amazonaws.com:5432/ddgtkvolna77jb"
+os.environ['DATABASE_URL'] = "${{ secrets.DATABASE_URI }}"
 # Connect to database
 # For heroku
 uri = os.getenv("DATABASE_URL")
@@ -47,9 +47,10 @@ def get_video():
     if request.method == "POST":
         link = request.form.get("download-button")
         quality = request.form.get("quality")
-        print(quality)
+        if len(link) > 70:
+            p = Playlist(link)
+            return redirect("/")
         yt = YouTube(link)
-        print(link)
         if quality[-1] == "p":
             update_db(yt.title, yt.author, link, "mp4")
             yt = yt.streams.filter(progressive=True, file_extension='mp4')
