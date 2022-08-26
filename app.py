@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, request, redirect, send_file
-from pytube import YouTube, Playlist
+from pytube import YouTube
 from io import BytesIO
 from cs50 import SQL
 from datetime import datetime
@@ -47,9 +47,6 @@ def get_video():
     if request.method == "POST":
         link = request.form.get("download-button")
         quality = request.form.get("quality")
-        if len(link) > 70:
-            p = Playlist(link)
-            return redirect("/")
         yt = YouTube(link)
         if quality[-1] == "p":
             update_db(yt.title, yt.author, link, "mp4")
