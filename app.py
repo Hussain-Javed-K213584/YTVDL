@@ -58,7 +58,7 @@ def get_video():
             return send_file(buffer, as_attachment=True, download_name=yt.title + ".mp4", mimetype="video/mp4")
         elif quality == "mp3":
             # update_db(yt.title, yt.author, link, "mp3")
-            yt = yt.streams.filter(only_audio=True, file_extension='mp4')
+            yt = yt.streams.filter(progressive=True, file_extension='mp4')
             yt = yt.get_highest_resolution()
             buffer = BytesIO() # Use buffer to not to download file on server
             yt.stream_to_buffer(buffer)
