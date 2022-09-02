@@ -5,24 +5,28 @@
 {% endblock %}
 
 {% block body %}
-<main class="container">
-    <div class="container-fluid">
-        <p class="title">
-            Title: {{ title }}
-        </p>
-        <img class="thumbnail" src="{{ image }}" alt="ImageNotFound">
-        <form class="quality-submit" action="/download" method="post">
-            <label for="quality">Quality:</label>
-            <select class="form-select" name="quality">
-                <option value="720p">720p</option>
-                <option value="360p">360p</option>
-                <option value="mp3">mp3</option>
-            </select>
-            <button class="btn btn-primary btn-download" type="submit" name="download-button" value="{{ link }}">Download</button>
-        </form>
-        <p class="author">
-            Author: {{ author }}
-        </p>
+<main class="main-result">
+    <div class="container">
+        <div class="container-image grid-item">
+            <p class="title">
+                Title: {{ title }}
+            </p>
+            <img class="thumbnail" src="{{ image }}" alt="ImageNotFound">
+            <p class="author">
+                Author: {{ author }}
+            </p>
+        </div>
+        <div class="container-forms grid-item">
+            <form class="download-form" action="/download" method="post">
+                <label for="quality">Quality:</label>
+                <select class="form-select" name="quality">
+                    <option value="720p">720p</option>
+                    <option value="360p">360p</option>
+                    <option value="mp3">mp3</option>
+                </select>
+                <button class="btn btn-download" type="submit" name="download-button" value="{{ link }}">Download</button>
+            </form>
+        </div>
     </div>
 </main>
 

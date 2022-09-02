@@ -4,33 +4,40 @@
   padding: 0;
 }
 
-@font-face {
-  font-family: titleAndAuthor;
-  src: url(/OpenSans/OpenSans-regular.ttf);
+
+body, html{
+  height: 100%;
 }
 
-body.document{
-  background-color: snow;
+.document{
+  background-color: rgb(37, 37, 37);
 }
 
 .header-container{
   display: flex;
-  background-color: skyblue;
+  background-color: rgb(27, 27, 27);
   justify-content: center;
   align-items: center;
   height: 6.7vh;
 }
 
+.main-result{
+  height: 70%;
+}
+
 .main-page{
   text-decoration: none;
-  color: snow;
+  font-family: "Roboto Mono";
+  color: snow
 }
 
 .main-page:hover{
   color: snow;
 }
+
 .header-content{
-  color: white;
+  color: snow;
+  
 }
 
 .flex{
@@ -42,7 +49,8 @@ body.document{
 }
 
 .commend{
-  text-decoration: none;
+  text-decoration: underline;
+  color: rgb(100, 100, 100);
 }
 
 .end{
@@ -50,6 +58,8 @@ body.document{
   margin-top: 18em;
   font-size: 24px;
   font-style: italic;
+  font-family: "Roboto Mono";
+  color: rgb(100, 100, 100);
 }
 
 input[type=text]{
@@ -60,14 +70,14 @@ input[type=text]{
   -moz-appearance: none;
   appearance: none;
   font: 15px/1 'Open Sans', sans-serif;
-  color: grey;
+  color: snow;
   font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 300px;
   max-width: 500px;
-  background-color: snow;
-  border: 2px solid grey;
+  background-color: rgb(47, 47, 47);
+  border: 2px solid rgb(47, 47, 47);
   padding: 10px 11px 11px 11px;
   border-radius: 3px;
   box-shadow: none;
@@ -83,9 +93,9 @@ input[type=text]{
 }
 
 .thumbnail{
-  margin: 20px 0px 0px 30px;
-  display: inline-block;
-  vertical-align: top;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   width: 250px;
   height: 200px;
 }
@@ -100,24 +110,53 @@ input[type=text]{
 }
 
 .container{
-  box-shadow: 7px 7px 10px 10px lightblue;
-  background-color: snow;
-  width: 600px;
-  height: 700px;
-  overflow: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 70px;
+  outline: 5px solid red;
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 22vh;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.container-image{
+  outline: 5px solid green;
+  /* width: 50%;
+  height: 60%; */
+}
+
+.container-forms{
+  /* width: 50%;
+  height: 150px; */
+  outline: 5px solid blue;
+}
+
+.download-form{
+  width: 100%;
+}
+
+.btn, .form{
+  margin: 15px 0;
+  display: block;
 }
 
 .btn{
-  margin-left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(100, 100, 100);
+  font-family: "Roboto Mono";
+  font-size: 15px;
+  border: 2px solid rgb(100, 100, 100);
+  cursor: pointer;
+  opacity: 0.4;
+  transition: 0.3s;
 }
 
-.btn-download{
-  margin-top: -66px;
-  margin-left: 120px;
+.btn:hover{
+  opacity: 1;
 }
 
 .dropdown{
@@ -132,14 +171,29 @@ input[type=text]{
 }
 
 .title{
-  margin: 50px 0px 0px 80px;
+  text-align: center;
   font-family: "Roboto";
   font-weight: bold;
+  font-size: 2vh;
 }
 
 .author{
-  margin: 30px 0px 0px 90px;
+  text-align: center;
   font-family: "Roboto";
   font-weight: bold;
+  font-size: 2vh;
 }
 
+
+@media screen and (max-width: 992px) {
+  .container{
+    display: block;
+  }
+  .thumbnail{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: auto;
+  }
+}
