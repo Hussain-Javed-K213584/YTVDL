@@ -62,11 +62,11 @@ The result.html would be rendered once the user clicks on the Download button on
 of the video he/she requested to download. The details include:
 - Video Title
 - Video author
-- Video Thumbnail
+- Video Thumbnail<br>
 The page also contains a download button and a quality dropdown menu having three options:
 - 720p
 - 360p
-- mp3
+- mp3<br>
 Where mp3 is used to download only the audio of the video, this option was specifically for music videos.
 
 ### Apology.html
