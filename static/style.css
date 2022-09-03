@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-
 body, html{
   height: 100%;
 }
@@ -110,9 +109,8 @@ input[type=text]{
 }
 
 .container{
-  outline: 5px solid red;
   width: 50%;
-  height: 100%;
+  height: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 22vh;
@@ -120,18 +118,44 @@ input[type=text]{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  box-shadow: 2px 2px 10px rgb(100, 100, 100);
 }
 
 .container-image{
-  outline: 5px solid green;
+  padding-top: 25px;
   /* width: 50%;
   height: 60%; */
+}
+
+label{
+  color: white;
+  font-family: "Roboto";
+}
+
+.form-select{
+  margin-left: 10px;
+  font-family: "Roboto Mono";
+  background-color: rgb(100, 100, 100);
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 7px;
+  opacity: 0.4;
+  transition: 0.4s;
+  font-size: 14px;
+}
+
+.form-select:hover{
+  opacity: 1;
+  cursor: pointer;
 }
 
 .container-forms{
   /* width: 50%;
   height: 150px; */
-  outline: 5px solid blue;
+  margin-top: 60px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .download-form{
@@ -141,6 +165,11 @@ input[type=text]{
 .btn, .form{
   margin: 15px 0;
   display: block;
+}
+
+.btn-download{
+  display: inline;
+  margin-left: 15px;
 }
 
 .btn{
@@ -173,21 +202,31 @@ input[type=text]{
 .title{
   text-align: center;
   font-family: "Roboto";
-  font-weight: bold;
-  font-size: 2vh;
+  font-size: 1.8vh;
+  color: snow;
+  padding: 10px;
 }
 
 .author{
   text-align: center;
   font-family: "Roboto";
-  font-weight: bold;
-  font-size: 2vh;
+  font-size: 1.8vh;
+  color: snow;
+  padding: 10px;
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 930px) {
   .container{
     display: block;
+    height: 88%;
+    width: 100%;
+  }
+  .container-forms{
+    margin-top: 20px;
+  }
+  .btn-download{
+    margin-left: 2vh;
   }
   .thumbnail{
     width: 50%;
