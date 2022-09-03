@@ -17,23 +17,8 @@ more on that later. The structure of my directory is something like this:
 .
 ├── Database
 │   └── history.db
-├── OpenSans
-│   ├── OpenSans-Bold.ttf
-│   ├── OpenSans-BoldItalic.ttf
-│   ├── OpenSans-ExtraBold.ttf
-│   ├── OpenSans-ExtraBoldItalic.ttf
-│   ├── OpenSans-Italic.ttf
-│   ├── OpenSans-Light.ttf
-│   ├── OpenSans-LightItalic.ttf
-│   ├── OpenSans-Medium.ttf
-│   ├── OpenSans-MediumItalic.ttf
-│   ├── OpenSans-Regular.ttf
-│   ├── OpenSans-SemiBold.ttf
-│   └── OpenSans-SemiBoldItalic.ttf
 ├── Procfile
 ├── README.md
-├── __pycache__
-│   └── app.cpython-38.pyc
 ├── app.py
 ├── requirements.txt
 ├── static
