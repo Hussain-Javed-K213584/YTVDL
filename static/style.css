@@ -156,15 +156,16 @@ label{
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .download-form{
   width: 100%;
+  display: inline-block;
 }
 
 .btn, .form{
-  margin: 15px 0;
-  display: block;
+  margin-left: 15px;
 }
 
 .btn-download{
@@ -219,14 +220,12 @@ label{
 @media screen and (max-width: 930px) {
   .container{
     display: block;
-    height: 88%;
+    height: 100%;
     width: 100%;
+    overflow: auto;
   }
   .container-forms{
     margin-top: 20px;
-  }
-  .btn-download{
-    margin-left: 2vh;
   }
   .thumbnail{
     width: 50%;
@@ -234,5 +233,13 @@ label{
     margin-right: auto;
     display: block;
     height: auto;
+  }
+  .btn, .form{
+    margin: 15px 0;
+    display: block;
+  }
+  .btn-download{
+    margin-left: 2vh;
+    display: inline;
   }
 }
